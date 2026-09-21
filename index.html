@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Para Jazmín 💛</title>
+<meta name="description" content="Una carta, un ramo de flores amarillas y nuestros momentos, para Jazmín.">
+<meta name="theme-color" content="#F9A825">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===================== GATE / PORTADA ===================== -->
+<div id="gate" class="gate">
+  <div class="gate__petals" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="gate__content">
+    <span class="gate__flower">🌼</span>
+    <p class="gate__to">Para</p>
+    <h1 class="gate__name">Jazmín</h1>
+    <p class="gate__sub">Tienes una sorpresa esperándote&hellip;</p>
+    <button id="openBtn" class="btn" type="button">
+      <span>Abrir mi sorpresa</span> <em>✨</em>
+    </button>
+  </div>
+</div>
+
+<!-- ===================== AUDIO ===================== -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/audio/flores-amarillas.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" class="music-toggle" type="button" aria-label="Reproducir o pausar la música" aria-pressed="false">
+  <span class="music-toggle__note">♪</span>
+</button>
+
+<main id="site" class="site">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__petals" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__label">Para el amor de mi vida</p>
+
+      <h1 class="hero__name" aria-label="Jazmín">
+        <span>J</span><span>a</span><span>z</span><span>m</span><span>í</span><span>n</span>
+      </h1>
+
+      <h2 class="hero__happy">¡Feliz día!</h2>
+
+      <div class="bouquet" id="bouquet" aria-hidden="true">
+        <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="petalGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#FFF6C8"/>
+              <stop offset="55%" stop-color="#FFD54F"/>
+              <stop offset="100%" stop-color="#F9A825"/>
+            </radialGradient>
+            <radialGradient id="centerGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#FFC24A"/>
+              <stop offset="100%" stop-color="#E65100"/>
+            </radialGradient>
+            <linearGradient id="stemGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8BC34A"/>
+              <stop offset="100%" stop-color="#5A8F2E"/>
+            </linearGradient>
+            <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#9CCC65"/>
+              <stop offset="100%" stop-color="#689F38"/>
+            </linearGradient>
+            <linearGradient id="wrapGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFF7E0"/>
+              <stop offset="100%" stop-color="#F3DDAE"/>
+            </linearGradient>
+            <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#FFE3EC"/>
+            </linearGradient>
+          </defs>
+
+          <!-- wrapping paper -->
+          <path class="wrap" d="M118,420 L282,420 L216,286 L184,286 Z" fill="url(#wrapGrad)" stroke="#E8C48A" stroke-width="2"/>
+          <path class="wrap-fold" d="M200,286 L172,420" stroke="#E8C48A" stroke-width="1.5" opacity="0.6" fill="none"/>
+          <path class="wrap-fold" d="M200,286 L228,420" stroke="#E8C48A" stroke-width="1.5" opacity="0.6" fill="none"/>
+          <path class="wrap-fold" d="M200,286 L200,420" stroke="#E8C48A" stroke-width="1.5" opacity="0.4" fill="none"/>
+
+          <!-- stems -->
+          <path class="stem" data-stem="1" d="M200,300 Q150,250 128,196" fill="none" stroke="url(#stemGrad)" stroke-width="5" stroke-linecap="round"/>
+          <path class="stem" data-stem="2" d="M200,300 Q180,220 173,140" fill="none" stroke="url(#stemGrad)" stroke-width="5" stroke-linecap="round"/>
+          <path class="stem" data-stem="3" d="M200,300 Q205,200 224,118" fill="none" stroke="url(#stemGrad)" stroke-width="5" stroke-linecap="round"/>
+          <path class="stem" data-stem="4" d="M200,300 Q235,220 274,143" fill="none" stroke="url(#stemGrad)" stroke-width="5" stroke-linecap="round"/>
+          <path class="stem" data-stem="5" d="M200,300 Q260,250 318,203" fill="none" stroke="url(#stemGrad)" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- leaves -->
+          <ellipse class="leaf" style="--ld:1.05s" cx="158" cy="228" rx="15" ry="6.5" transform="rotate(-35 158 228)" fill="url(#leafGrad)"/>
+          <ellipse class="leaf" style="--ld:1.15s" cx="196" cy="258" rx="14" ry="6" transform="rotate(6 196 258)" fill="url(#leafGrad)"/>
+          <ellipse class="leaf" style="--ld:1.25s" cx="247" cy="232" rx="15" ry="6.5" transform="rotate(35 247 232)" fill="url(#leafGrad)"/>
+          <ellipse class="leaf" style="--ld:1.35s" cx="283" cy="188" rx="13" ry="6" transform="rotate(55 283 188)" fill="url(#leafGrad)"/>
+
+          <!-- ribbon -->
+          <path class="ribbon" d="M148,330 L252,330 L247,354 L153,354 Z" fill="url(#ribbonGrad)" stroke="#F4B8CB" stroke-width="1.5"/>
+          <g class="bow">
+            <path d="M200,342 C170,318 150,320 150,340 C150,356 178,352 200,342 Z" fill="#FFFFFF" stroke="#F4B8CB" stroke-width="2"/>
+            <path d="M200,342 C230,318 250,320 250,340 C250,356 222,352 200,342 Z" fill="#FFFFFF" stroke="#F4B8CB" stroke-width="2"/>
+            <path d="M200,342 L190,372 L200,364 L210,372 Z" fill="#FFFFFF" stroke="#F4B8CB" stroke-width="2"/>
+            <circle cx="200" cy="342" r="8" fill="#FFE3EC" stroke="#F4B8CB" stroke-width="2"/>
+          </g>
+
+          <!-- flowers (blooming) -->
+          <g transform="translate(130,170) scale(0.85)">
+            <g class="flower" style="--fd:.15s">
+              <g class="petals">
+                <g transform="rotate(0)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(45)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(90)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(135)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(180)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(225)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(270)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(315)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+              </g>
+              <circle class="flower-center" r="7.5" fill="url(#centerGrad)"/>
+            </g>
+          </g>
+
+          <g transform="translate(175,110) scale(1.0)">
+            <g class="flower" style="--fd:.35s">
+              <g class="petals">
+                <g transform="rotate(0)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(45)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(90)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(135)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(180)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(225)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(270)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(315)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+              </g>
+              <circle class="flower-center" r="8" fill="url(#centerGrad)"/>
+            </g>
+          </g>
+
+          <g transform="translate(225,90) scale(1.2)">
+            <g class="flower" style="--fd:0s">
+              <g class="petals">
+                <g transform="rotate(0)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(45)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(90)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(135)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(180)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(225)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(270)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(315)"><ellipse class="petal" cx="0" cy="-20" rx="8.5" ry="16" fill="url(#petalGrad)"/></g>
+              </g>
+              <circle class="flower-center" r="9" fill="url(#centerGrad)"/>
+            </g>
+          </g>
+
+          <g transform="translate(275,115) scale(1.0)">
+            <g class="flower" style="--fd:.35s">
+              <g class="petals">
+                <g transform="rotate(0)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(45)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(90)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(135)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(180)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(225)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(270)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(315)"><ellipse class="petal" cx="0" cy="-19" rx="8" ry="15" fill="url(#petalGrad)"/></g>
+              </g>
+              <circle class="flower-center" r="8" fill="url(#centerGrad)"/>
+            </g>
+          </g>
+
+          <g transform="translate(320,175) scale(0.85)">
+            <g class="flower" style="--fd:.15s">
+              <g class="petals">
+                <g transform="rotate(0)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(45)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(90)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(135)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(180)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(225)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(270)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+                <g transform="rotate(315)"><ellipse class="petal" cx="0" cy="-17" rx="7.5" ry="13.5" fill="url(#petalGrad)"/></g>
+              </g>
+              <circle class="flower-center" r="7.5" fill="url(#centerGrad)"/>
+            </g>
+          </g>
+
+          <!-- sparkles -->
+          <g class="sparkles" fill="#FFF6C8">
+            <path class="sparkle" style="--sd:1.6s" d="M90,120 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z"/>
+            <path class="sparkle" style="--sd:1.9s" d="M340,130 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5 Z"/>
+            <path class="sparkle" style="--sd:2.1s" d="M225,45 l3,8 8,3 -8,3 -3,8 -3,-8 -8,-3 8,-3 Z"/>
+            <path class="sparkle" style="--sd:2.4s" d="M120,80 l2,6 6,2 -6,2 -2,6 -2,-6 -6,-2 6,-2 Z"/>
+            <path class="sparkle" style="--sd:1.75s" d="M300,80 l2,6 6,2 -6,2 -2,6 -2,-6 -6,-2 6,-2 Z"/>
+          </g>
+        </svg>
+      </div>
+
+      <a href="#letter" class="hero__scroll" aria-label="Bajar para leer la carta">
+        <span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== CARTA ===================== -->
+  <section class="letter-section" id="letter">
+    <div class="letter reveal">
+      <span class="letter__decor" aria-hidden="true">🌼</span>
+      <p class="letter__greeting">Jazmín,</p>
+
+      <p>Hay nombres que simplemente combinan con quien los lleva, y el tuyo es uno de ellos: así como el jazmín perfuma cada rincón sin proponérselo, tú llenaste mi vida de un aroma que no sabía que me hacía falta.</p>
+
+      <p>Quiero que este día sea tuyo. Que lo sientas lleno de flores, de sol y de todas esas cosas pequeñas que te hacen sonreír. Porque contigo hasta los días comunes se sienten especiales, y no hay distancia ni tiempo que le gane a las ganas que tengo de seguir construyendo mil momentos más a tu lado.</p>
+
+      <p>Gracias por tu risa, por tu forma de ver el mundo, por elegirme cada día. Este ramo de flores amarillas es apenas una forma pequeña de decirte todo lo que no me alcanzan las palabras para explicar.</p>
+
+      <p class="letter__closing">Feliz día, mi amor. Te amo con todo lo que soy.</p>
+
+      <p class="letter__sign">Con todo mi corazón,<br><span>Andrés 💛</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== GALERÍA ===================== -->
+  <section class="gallery-section" id="gallery">
+    <h2 class="section-title reveal">Nuestros momentos</h2>
+    <p class="section-sub reveal">Cada foto, un motivo más para quererte</p>
+
+    <div class="gallery">
+      <figure class="gallery__item reveal" style="--r:-4deg">
+        <img src="assets/images/foto1.jpg" alt="Tu sonrisa, mi lugar favorito" loading="lazy">
+        <figcaption>Tu sonrisa, mi lugar favorito</figcaption>
+      </figure>
+      <figure class="gallery__item reveal" style="--r:3deg">
+        <img src="assets/images/foto2.jpg" alt="Cada momento contigo es un regalo" loading="lazy">
+        <figcaption>Cada momento contigo es un regalo</figcaption>
+      </figure>
+      <figure class="gallery__item reveal" style="--r:-2deg">
+        <img src="assets/images/foto3.jpg" alt="Contigo hasta lo simple se vuelve especial" loading="lazy">
+        <figcaption>Contigo hasta lo simple se vuelve especial</figcaption>
+      </figure>
+      <figure class="gallery__item reveal" style="--r:4deg">
+        <img src="assets/images/foto4.jpg" alt="Mi persona favorita" loading="lazy">
+        <figcaption>Mi persona favorita</figcaption>
+      </figure>
+      <figure class="gallery__item reveal" style="--r:-3deg">
+        <img src="assets/images/foto5.jpg" alt="Un beso, mil razones para sonreír" loading="lazy">
+        <figcaption>Un beso, mil razones para sonreír</figcaption>
+      </figure>
+      <figure class="gallery__item reveal" style="--r:2deg">
+        <img src="assets/images/foto6.jpg" alt="Haces mi vida más bonita" loading="lazy">
+        <figcaption>Haces mi vida más bonita</figcaption>
+      </figure>
+      <figure class="gallery__item reveal" style="--r:-3deg">
+        <img src="assets/images/foto7.jpg" alt="Gracias por tanto, mi amor" loading="lazy">
+        <figcaption>Gracias por tanto, mi amor</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== CIERRE ===================== -->
+  <section class="closing" id="closing">
+    <div class="closing__petals" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="closing__content reveal">
+      <span class="closing__flower">💛</span>
+      <h2>Feliz día, mi Jazmín</h2>
+      <p>Gracias por existir y por dejarme quererte. Hoy y siempre.</p>
+      <p class="closing__sign">— Andrés</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lightbox__close" type="button" aria-label="Cerrar">✕</button>
+  <button class="lightbox__prev" type="button" aria-label="Foto anterior">‹</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" src="" alt="">
+    <figcaption class="lightbox__caption"></figcaption>
+  </figure>
+  <button class="lightbox__next" type="button" aria-label="Foto siguiente">›</button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

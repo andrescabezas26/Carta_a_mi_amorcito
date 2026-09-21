@@ -1,0 +1,5 @@
+# Original camera exports — already converted/optimized into assets/images
+# and assets/audio, so the raw originals stay out of the repo.
+/IMG_*.HEIC
+/IMG_*.jpg
+/Floricienta*.mp3
